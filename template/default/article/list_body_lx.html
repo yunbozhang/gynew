@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+<meta charset="UTF-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}images/favicon.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/bootstrap.css" />
+
+    <!-- Template CSS Files  -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/responsive.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/prettyPhoto.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/style.css" />
+
+    <!-- Template JS Files -->
+    <script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/modernizr.js"></script>
+</head>
+
+
+<body class="page-template-page-fullwidth">
+{include="head.html"}
+        <div class="content-holder clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="row">
+                            <div class="span12">
+                                <section class="title-section">
+                                    <h1 class="title-header">{$type['classname']} </h1>
+                                    <ul class="breadcrumb breadcrumb__t">
+                                        <li>当前位置：{$positions}</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+						<!-- Main Content Starts -->
+                        <div id="content" class="row">
+                            <div class="span12">
+                                <div>
+                                    <div class="content_box">
+                                        <div class="google-map">
+											<iframe width='1110' height='440' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='http://f.amap.com/034NFJ'></iframe>
+                                        </div>
+                                        <div class="row-fluid">
+											<!-- Contact Info Starts -->
+                                            <div class="span4">
+                                                <h2>公司联系信息</h2>
+<!--                                                 <h5>经营范围：国内商务信息咨询；企业管理咨询；企业营销策划；会务服务及展览展示；策划文化交流活动。</h5>
+ -->                                                <p>国昱·玉珑湾深刻理解现代人对健康的重视和渴求：项目位置与阳城县人民医院仅一路之隔；小区所有住宅均配备医护电梯，病人丛急救呼叫到转入医院病号不超过15分钟；小区规划养老医疗公寓,玉阳城人民医院建立社区医疗服务合作...国昱·玉珑湾为您的家庭成员提供完美的健康保障。 国昱·玉珑湾深刻理解现代人对健康的重视和渴求：项目位置与阳城县人民医院仅一路之隔；小区所有住宅均配备医护电梯，病人丛急救呼叫到转入医院病号不超过15分钟；小区规划养老医疗公寓,玉阳城人民医院建立社区医疗服务合作...国昱·玉珑湾为您的家庭成员提供完美的健康保障。
+												<br/>
+												<address>
+													<strong>联系地址：{$GLOBALS['S']['comaddress']}
+													</strong>
+													<br/>
+													联系电话：{$GLOBALS['S']['comphone']}<br/>
+<!--                                                     FAX: +1 800 800 9000<br/>
+ -->													<!-- E-mail: <a href="mailto:{$GLOBALS['S']['comemail']}"><span>{$GLOBALS['S']['comemail']}</span></a><br/> -->
+												</address> 
+											</div>
+											<!-- Contact Info Ends -->
+											<!-- Contact Form Starts -->
+                                            <div id="cf" class="span8">
+                                                <h2>在线留言</h2>
+                                                <div class="cf">
+                                                    <form action="#cf" method="post" class="cf-form">
+                                                        <div class="row-fluid">
+                                                            <p class="span4 field"><span class="cf-form-control-wrap"><input type="text" id="your-name" placeholder="你的姓名" name="your-name" value="" size="40" title="Name:"/></span> </p>
+                                                            <p class="span4 field"><span class="cf-form-control-wrap"><input type="text" id="your-email" placeholder="邮箱地址" name="your-email" value="" size="40" title="E-mail:"/></span> </p>
+                                                            <p class="span4 field"><span class="cf-form-control-wrap"><input type="text" id="your-phone" placeholder="电话号码" name="your-phone" value="" size="40" title="Phone:"/></span> </p>
+                                                        </div>
+                                                        <p class="field"><span class="cf-form-control-wrap"><textarea name="your-message" id="your-message" placeholder="你要留言的内容..." cols="40" rows="10" title="Message:"></textarea></span> </p>
+                                                        <p class="submit-wrap">
+														<?php echo $result; ?>	
+                                                            <input type="reset" value="重置" class="btn btn-primary" />
+                                                            <input  id="submit" name="submit" type="submit" value="发送" class="cf-form-control  cf-submit btn btn-primary" />
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+											<!-- Contact Form Ends -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<!-- Main Content Ends -->
+                    </div>
+                </div>
+            </div>
+        </div>
+{include="bottom.html"}
+</body>
+</html>

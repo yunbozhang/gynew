@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+<meta charset="UTF-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}images/favicon.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/bootstrap.css" />
+
+    <!-- Template CSS Files  -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/responsive.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/prettyPhoto.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/style.css" />
+
+    <!-- Template JS Files -->
+    <script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/modernizr.js"></script>
+</head>
+
+
+<body>
+{include="head.html"}
+        <div class="content-holder clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="row">
+                            <div class="span12">
+                                <section class="title-section">
+                                    <h1 class="title-header">{$type['classname']} </h1>
+                                    <ul class="breadcrumb breadcrumb__t">
+                                        <li>当前位置：{$positions}</li>
+
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row">
+							<!-- Main Content Starts -->
+                            <div class="span12" id="content">
+                                <div class="conentbody">
+                           		<div class="jwcdn">
+		<jwbody>
+		{$type['body']}
+		</jwbody>
+		</div>
+                                    
+                                </div>
+                            </div>
+							<!-- Main Content Ends -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{include="bottom.html"}
+<script type="text/javascript">
+$(function(){
+$(".jwcdn jwbody").each(function(index, element) {
+	var $old=$(this).html();
+	var $new=$old.replace(/\/uploads/g,'{$GLOBALS['S']['jwcdnapi']}/uploads');
+	$(this).html($new);
+});
+})
+</script>
+</body>
+</html>

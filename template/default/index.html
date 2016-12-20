@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+<meta charset="UTF-8" />
+<TITLE>{$GLOBALS['S']['title']}</TITLE>
+<META NAME="robots" CONTENT="all">
+<META name="keywords" content="{$GLOBALS['S']['keywords']}">
+<META name="description" content="{$GLOBALS['S']['description']}" >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Fav icon -->
+	<link rel="shortcut icon" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}images/favicon.png">
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/bootstrap.css" />
+	
+	<!-- Template CSS Files  -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/responsive.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/prettyPhoto.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/camera.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/style.css" />
+		
+	<!-- Template JS Files -->
+	<script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/jquery-1.11.3.min.js"></script> 
+	<script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/jquery-migrate-git.min.js"></script>
+	<script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/modernizr.js"></script>
+	
+</head>
+
+<body>
+{include="head.html"}
+
+        <div class="content-holder clearfix">
+            <div class="container">
+				<!-- Main Content Starts -->
+                <div class="row">
+                    <div class="span12">
+                        <div class="row">
+                            <div class="span12">
+                                <div class="slider-wrap">
+                                    <div id="slider-wrapper" class="slider">
+                                        
+										<!-- Slider Section Starts -->
+                                        
+                                        <div id="camera5448d07be94d1" class="camera_wrap camera">
+                                        {loop table="channel" molds="banner" tid="7" limit="3" as="v"}
+                                            <div data-src='{$GLOBALS['S']['jwcdnapi']}{$v['bannerpic']}' data-link='#'>
+                                                <div class="camera_caption fadeFromTop">
+                                                    <h4><i class="icon-arrow-right"></i>{$v['title']}</h4>
+                                                    <h2>{$v['bannerzhuti']}</h2>
+                                                    <p>{$v['bannermiaoshu']}</p>
+                                                    <a href="{$v['bannerlink']}" class="btn btn-primary btn-large">查看更多...</a>
+												</div>
+                                            </div>
+                                            {/loop}
+
+                                        </div>
+										<!-- Slider Section Ends -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <div class="type-page">
+									
+                                    <div class="spacer"> </div>
+									<!-- Projects Section Starts -->
+                                    <div class="row">
+                                        <div class="span12">
+                                            <div class="content_box">
+                                                <h2>户型展示</h2>
+                                                <ul class="posts-grid row-fluid unstyled latest_projects">
+													<!-- Image Format -->
+                                          {loop table="article" tid="2" limit="4"}
+                                                    <li>
+                                                        <div class="flip-container">
+                                                            <div class="flipper">
+                                                                <div class="front">
+                                                                    <h5>{fun newstr($v['title'],35)}</h5>
+                                                                    <figure class="featured-thumbnail thumbnail"><img src="{$GLOBALS['S']['jwcdnapi']}{$v['litpic']}" alt="{$v['title']}" /></figure>
+                                                                </div>
+                                                                <div class="back">
+                                                                    <div class="inner">
+                                                                        <h5>{fun newstr($v['title'],35)}</h5>
+                                                                        <div class="post_meta"><span class="post_date"><time datetime="{fun date('Y-m-d',$v['addtime'])}">{fun date('Y-m-d',$v['addtime'])}</time></span></div>
+                                                                        <p class="excerpt">{fun newstr($v['description'],100)}</p>
+																		<a href="{$v['url']}" class="btn btn-primary" title="查看更多...">查看更多...</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {/loop}
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- Projects Section Ends -->
+                                    <div class="spacer"> </div>
+
+                                    <!-- Services Section Starts -->
+                                    <div class="row">
+                                        <div class="span4">
+                                            <div class="service-box color-1 extra-btn">
+                                                <figure class="icon"><i class="icon-leaf"></i></figure>
+                                                <div class="service-box_body">
+                                                    <h2 class="title">资源整合服务</h2>
+                                                    <div class="service-box_txt">为客户整合相关平台资源，匹配投资项目，促成投资行为达成.</div>
+                                                    <div class="btn-align"><a href="#" title="Read more" class="btn btn-inverse btn-normal btn-primary">Read more</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="service-box color-2 extra-btn">
+                                                <figure class="icon"><i class="icon-cogs"></i></figure>
+                                                <div class="service-box_body">
+                                                    <h2 class="title">投资考察服务</h2>
+                                                    <div class="service-box_txt">根据客户需求，提供意向性投资考察的全程协助服务及代理考察服务.</div>
+                                                    <div class="btn-align"><a href="#" title="Read more" class="btn btn-inverse btn-normal btn-primary">Read more</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="service-box color-3 extra-btn">
+                                                <figure class="icon"><i class="icon-comments-alt"></i></figure>
+                                                <div class="service-box_body">
+                                                    <h2 class="title">投资咨询服务</h2>
+                                                    <div class="service-box_txt">实行会员制，定期为会员提供与投资相关的政策、资讯咨询服务.</div>
+                                                    <div class="btn-align"><a href="#" title="Read more" class="btn btn-inverse btn-normal btn-primary">Read more</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Services Section Ends -->
+
+									<!-- Clients Section Starts -->
+                                    <div class="row">
+                                        <div class="span12">
+                                            <div class="content_box ">
+                                                <h2>户型视频</h2>
+                                                <ul class="posts-grid row-fluid unstyled latest_projects">
+                                                    <!-- Image Format -->
+                                          {loop table="video" limit="4"}
+                                                    <li>
+                                                                    <h5>{fun newstr($v['title'],35)}</h5>
+<!--                                                                     <figure class="featured-thumbnail thumbnail"><img src="{$GLOBALS['S']['jwcdnapi']}{$v['litpic']}" alt="{$v['title']}" /></figure>
+ -->  
+ <video width=100% height=40% controls="controls" autoplay="autoplay">
+  <source src="/uploads/movie.ogg" type="video/ogg" />
+  <source src="/uploads/movie.mp4" type="video/mp4" />
+  <source src="/uploads/movie.webm" type="video/webm" />
+  <object data="/uploads/movie.mp4" width=100% height=40%>
+    <embed width=100% height=40% src="/movie/movie.mp4" />
+  </object>
+                                                             
+                                                    </li>
+                                                    {/loop}
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- Skills Section Starts -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!-- Main Content Ends -->
+            </div>
+        </div>
+{include="bottom.html"}
+	<script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/camera.min.js"></script>
+	<script type="text/javascript">
+	//    jQuery(window).load(function() {
+	jQuery(function() {
+		var myCamera = jQuery('#camera5448d07be94d1');
+		if (!myCamera.hasClass('motopress-camera')) {
+			myCamera.addClass('motopress-camera');
+			myCamera.camera({
+				alignment: 'topCenter', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
+				autoAdvance: true, //true, false
+				mobileAutoAdvance: true, //true, false. Auto-advancing for mobile devices
+				barDirection: 'leftToRight', //'leftToRight', 'rightToLeft', 'topToBottom', 'bottomToTop'
+				barPosition: 'top', //'bottom', 'left', 'top', 'right'
+				cols: 12,
+				easing: 'easeOutQuad', //for the complete list http://jqueryui.com/demos/effect/easing.html
+				mobileEasing: '', //leave empty if you want to display the same easing on mobile devices and on desktop etc.
+				fx: 'random', //'random','simpleFade', 'curtainTopLeft', 'curtainTopRight', 'curtainBottomLeft',          'curtainBottomRight', 'curtainSliceLeft', 'curtainSliceRight', 'blindCurtainTopLeft', 'blindCurtainTopRight', 'blindCurtainBottomLeft', 'blindCurtainBottomRight', 'blindCurtainSliceBottom', 'blindCurtainSliceTop', 'stampede', 'mosaic', 'mosaicReverse', 'mosaicRandom', 'mosaicSpiral', 'mosaicSpiralReverse', 'topLeftBottomRight', 'bottomRightTopLeft', 'bottomLeftTopRight', 'bottomLeftTopRight'
+				//you can also use more than one effect, just separate them with commas: 'simpleFade, scrollRight, scrollBottom'
+				mobileFx: '', //leave empty if you want to display the same effect on mobile devices and on desktop etc.
+				gridDifference: 250, //to make the grid blocks slower than the slices, this value must be smaller than transPeriod
+				height: '52.5%', //here you can type pixels (for instance '300px'), a percentage (relative to the width of the slideshow, for instance '50%') or 'auto'
+				imagePath: '/skin/default/images/camera-slider/', //he path to the image folder (it serves for the blank.gif, when you want to display videos)
+				loader: 'no', //pie, bar, none (even if you choose "pie", old browsers like IE8- can't display it... they will display always a loading bar)
+				loaderColor: '#ffffff',
+				loaderBgColor: '#eb8a7c',
+				loaderOpacity: 1, //0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1
+				loaderPadding: 0, //how many empty pixels you want to display between the loader and its background
+				loaderStroke: 3, //the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
+				minHeight: '147px', //you can also leave it blank
+				navigation: true, //true or false, to display or not the navigation buttons
+				navigationHover: false, //if true the navigation button (prev, next and play/stop buttons) will be visible on hover state only, if false they will be visible always
+				pagination: true,
+				playPause: false, //true or false, to display or not the play/pause buttons
+				pieDiameter: 33,
+				piePosition: 'rightTop', //'rightTop', 'leftTop', 'leftBottom', 'rightBottom'
+				portrait: true, //true, false. Select true if you don't want that your images are cropped
+				rows: 8,
+				slicedCols: 12,
+				slicedRows: 8,
+				thumbnails: false,
+				time: 5000, //milliseconds between the end of the sliding effect and the start of the next one
+				transPeriod: 1200, //lenght of the sliding effect in milliseconds
+
+				////////callbacks
+
+				onEndTransition: function() {}, //this callback is invoked when the transition effect ends
+				onLoaded: function() {}, //this callback is invoked when the image on a slide has completely loaded
+				onStartLoading: function() {}, //this callback is invoked when the image on a slide start loading
+				onStartTransition: function() {} //this callback is invoked when the transition effect starts
+			});
+		}
+	});
+	//    });
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/bootstrap.css" />
+
+    <!-- Template CSS Files  -->
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/responsive.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/prettyPhoto.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}css/style.css" />
+
+    <!-- Template JS Files -->
+    <script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript" src="{$GLOBALS['S']['jwcdnapi']}{$GLOBALS['skin']}js/modernizr.js"></script>
+</head>
+
+
+
+<body>
+{include="head.html"}
+        <div class="content-holder clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="row">
+                            <div class="span12">
+                                <section class="title-section">
+                                    <h1 class="title-header">{$type['classname']}</h1>
+                                    <ul class="breadcrumb breadcrumb__t">
+                                        <li>当前位置：{$positions}</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row">
+							<!-- Main Content Starts -->
+                            <div class="span8 right" id="content">
+                            
+                            
+                            {foreach $lists as $v}
+                                <!-- Article Starts-->
+                                <article class="post post__holder">
+                                    <header class="post-header">
+                                        <h2 class="post-title"><a href="{$v['url']}">{$v['title']}</a></h2>
+                                    </header>
+                                    <figure class="featured-thumbnail thumbnail">
+                                        <a href="{$v['url']}"><img width="250" height="200" src="{$GLOBALS['S']['jwcdnapi']}{$v['litpic']}" alt="{$v['title']}" /></a>
+                                    </figure>
+
+                                    <div class="post_content">
+                                        <div class="excerpt">
+                                            {fun newstr($v['description'],200)}
+                                        </div>
+                                        <a href="{$v['url']}" class="btn btn-primary btn-large">查看更多...</a>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="post_meta">
+                                        <span class="post_category">
+											<i class="icon-bookmark"></i>点击：{$v['hits']} 次
+										</span>
+                                        <span class="post_date">
+											<i class="icon-calendar"></i>
+											<time datetime="2013-03-14T20:28:57">发布时间：{fun date('Y-m-d',$v['addtime'])}</time>
+										</span>
+
+                                        <span class="post_permalink">
+											<i class="icon-link"></i>
+											<a href="{$v['url']}">链接地址</a>
+										</span>
+                                    </div>
+                                </article>
+                                <!-- Article Ends-->
+                           {/foreach}
+
+
+                                <div class="pagination pagination__posts">
+                                    <ul>
+                                   {$pages}
+                                    </ul>
+                                </div>
+                            </div>
+							<!-- Main Content Starts -->
+							<!-- Sidebar Starts -->
+                            <div class="span4 sidebar" id="sidebar">
+                                <div class="widget"><!-- Categories Widget -->
+                                    <h3>栏目分类</h3>
+                                    <ul>
+                                          {loop table="classtype" pid="$type["tid"]" mshow="1" not="1" as="t"}
+      <li><a href="{$t['url']}"{if($type['tid']==$t['tid'])} class="c"{/if}>{$t['classname']}</a></li>
+      {/loop}
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="widget"><!-- Recent Posts Widget -->
+                                    <h3>推荐信息</h3>
+                                    <ul class="post-list unstyled">
+                                    {loop table="article" tid="$type['tid']" limit="10" trait="2"}
+                                        <li class="post-list_li clearfix">
+                                            <figure class="featured-thumbnail thumbnail">
+                                                <a href="{$v['url']}"><img src="{$GLOBALS['S']['jwcdnapi']}{$v['litpic']}" alt="{$v['title']}" /></a>
+                                            </figure>
+                                            <time datetime="2013-03-14T20:28">{fun date('Y-m-d',$v['addtime'])}</time>
+                                            <h4 class="post-list_h"><a href="{$v['url']}">{fun newstr($v['title'],30)}</a></h4>
+                                            <div class="excerpt">
+                                                {fun newstr($v['description'],200)} </div>
+                                            <a href="{$v['url']}" class="btn btn-primary">查看更多...</a>
+                                        </li>
+                                      {/loop}
+                                    </ul>
+                                </div>
+                            </div>
+							<!-- Sidebar Ends -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{include="bottom.html"}
+</body>
+</html>
