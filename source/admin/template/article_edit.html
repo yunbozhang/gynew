@@ -6,21 +6,22 @@
 <link href="source/admin/template/style/admin.css" rel="stylesheet" type="text/css" />
 <script src="include/js/jsmain.js" type="text/javascript"></script>
 <script src="include/js/DatePicker/WdatePicker.js" type="text/javascript"></script>
-<script charset="utf-8" src="include/js/kindeditor/kindeditor-min.js"></script>
-<script charset="utf-8" src="include/js/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="include/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="include/js/ueditor/ueditor.all.js"></script>
 <script src="include/js/admin.js" type="text/javascript"></script>
 <script type="text/javascript">
-var editor;
-KindEditor.ready(function(K) {
-	editor = K.create('#body1', {
-		cssPath : ['include/js/prettify.css'],
-		fileManagerJson : '<?php echo $GLOBALS["G_DY"]["url"]["url_path_base"];?>?c=uploads&a=filemanager',
-		allowFileManager : true,
-		filePostName : 'editor_KindEditor',
-		filterMode : false,
-		uploadJson : '<?php echo $GLOBALS["G_DY"]["url"]["url_path_base"];?>?c=uploads&tid='+$("#tid").attr("value")+'&isfiles=editor_KindEditor'
-	});
-});
+
+
+// KindEditor.ready(function(K) {
+// 	editor = K.create('#body1', {
+// 		cssPath : ['include/js/prettify.css'],
+// 		fileManagerJson : '<?php echo $GLOBALS["G_DY"]["url"]["url_path_base"];?>?c=uploads&a=filemanager',
+// 		allowFileManager : true,
+// 		filePostName : 'editor_KindEditor',
+// 		filterMode : false,
+// 		uploadJson : '<?php echo $GLOBALS["G_DY"]["url"]["url_path_base"];?>?c=uploads&tid='+$("#tid").attr("value")+'&isfiles=editor_KindEditor'
+// 	});
+// });
 $(function(){
 	$("#tid option[class='hidden']").remove();
 	fieldsinfo();
@@ -52,6 +53,7 @@ function fieldsinfo(){
 		cache: false,
 		data: "tid="+$("#tid").attr("value")+"&molds=<?php echo $molds;?>&id=<?php echo $carray['id'];?>",
 		success: function(html){
+            alert(html);
 			$("#fieldsinfo").empty();
 			$("#fieldsinfo").append(html);
 		}
@@ -82,7 +84,17 @@ function delfieldall(fieldid){
     <dl id="litpicover" class="fileover" style="<?php if($carray['litpic']!='')echo 'display:block;';?>"><dt>&nbsp;</dt><?php if($carray['litpic']!=''){echo '<dd><img src="'.$carray['litpic'].'" height="50" /></dd>';} ?></dl>
     <dl><dt>缩略图：</dt><dd><input name="litpic" id="litpic" type="text" class="int" value="<?php echo $carray['litpic'] ?>" /></dd><dd><iframe frameborder="0" width="300" height="26" scrolling="No" id="flitpic" name="flitpic" src="?c=uploads&a=loadup&inputid=litpic&fileExt=*.jpg;*.jpeg;*.gif;*.png&fileover=1"></iframe></dd></dl>
     <span id="fieldsinfo"></span>
-    <dl><dt>内容：</dt><dd><input name="all_down_images" id="all_down_images" type="checkbox" value="1" />下载远程图片&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="editor.insertHtml('[jwcom|page]');">插入分页符</a><span style="color:#999">(将鼠标点击在需要分页的地方，然后点此处插入分页)</span><br /><textarea name="body" id="body1" style="width:670px;height:400px;"><?php echo code_body($carray["body"],0) ?></textarea></dd>
+    <dl><dt>内容：</dt><dd><input name="all_down_images" id="all_down_images" type="checkbox" value="1" />下载远程图片&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="editor.insertHtml('[jwcom|page]');">插入分页符</a><span style="color:#999">(将鼠标点击在需要分页的地方，然后点此处插入分页)</span><br />
+
+    <script id="body1" name="body" type="text/plain">
+           <?php echo code_body($carray["body"],0) ?>    
+    </script>
+    <script type="text/javascript">
+           var editor=UE.getEditor('body1').ready(function() {
+      
+    });
+    </script>
+    </dd>
     </dl>
     <dl><dt>简介：</dt><dd><textarea name="description" style="width:300px; height:50px;" class="int"><?php echo $carray['description'] ?></textarea></dd></dl>
     <?php if(!empty($traits)){ ?>

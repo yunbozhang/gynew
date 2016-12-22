@@ -44,16 +44,7 @@
                                     </li>
                                        {/loop}
 
-                                    <!-- 关于我们 -->
-                                        <li class="color-2 icon-file-alt {if($type['tid']==1)}current-menu-item{/if}">
-                                            {loop table="classtype" tid="1"}
-                                            <a href="{$v['url']}">
-                                                {$v['title']}
-                                            </a>
-                                            {/loop}
-                                            
-                                        </li>
-                                   <!-- 服务项目 -->
+                                       <!-- 户型展示 -->
                                         <li class="color-3 icon-edit {if($type['tid']==2)}current-menu-item{/if}">
                                             {loop table="classtype" tid="2"}
                                             <a href="{$v['url']}">
@@ -62,6 +53,17 @@
                                             {/loop}
                                             
                                         </li>
+
+                                    <!-- 户型视频 -->
+                                        <li class="color-2 icon-file-alt {if($type['tid']==3)}current-menu-item{/if}">
+                                            {loop table="classtype" tid="3"}
+                                            <a href="{$v['url']}">
+                                                {$v['title']}
+                                            </a>
+                                            {/loop}
+                                            
+                                        </li>
+                                   
                                     <!-- 人才招聘 -->
 
                                         <li class="color-4 icon-th-large {if($type['tid']==6)}current-menu-item{/if}">
