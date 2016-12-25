@@ -140,7 +140,7 @@
         //    }
         //}()
 
-        ,allHtmlEnabled:true //提交到后台的数据是否包含整个html字符串
+        //,allHtmlEnabled:true //提交到后台的数据是否包含整个html字符串
 
         //insertorderedlist
         //有序列表的下拉配置,值留空时支持多语言自动识别，若配置值，则以此值为准
@@ -400,7 +400,7 @@
 			header: [],
 			hr:     [],
 			i:      ['class', 'style'],
-			img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', 'loadingclass', 'class', 'data-latex'],
+            img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', '_url' 'loadingclass', 'class'], 
 			ins:    ['datetime'],
 			li:     ['class', 'style'],
 			mark:   [],
@@ -425,7 +425,10 @@
 			tt:     [],
 			u:      [],
 			ul:     ['class', 'style'],
-			video:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'class', 'style']
+			video:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'class', 'style'], 
+            source: ['src', 'type'], 
+            embed: ['type', 'class', 'pluginspage', 'src', 'width', 'height', 'align', 'style', 'wmode', 'play', 'loop', 'menu', 'allowscriptaccess', 'allowfullscreen'] 
+
 		}
     };
 
