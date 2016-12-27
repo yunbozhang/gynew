@@ -30,7 +30,7 @@
 			$('<select />',{'class':settings.className}).insertAfter(el);
 			
 			// Create default option
-			$('<option />', {"value":'#', "text":settings.defaultText}).appendTo( '.' + settings.className );
+			// $('<option />', {"value":'#', "text":settings.defaultText}).appendTo( '.' + settings.className );
 			
 			// Create select option from menu
 			el.find('a,.separator').each(function(){

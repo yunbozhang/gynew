@@ -36,8 +36,9 @@
                                 <nav class="nav nav__primary clearfix">
                                     <ul class="sf-menu">
                                     <!-- 首页 -->
-                                       {loop table="classtype" limit="1"} 
                                        <li class="color-1 icon-home {if($type['tid']==0)}current-menu-item{/if}">
+                                        {loop table="classtype" tid="1"} 
+
                                         <a href="{$GLOBALS['WWW']}">
                                             首页
                                         </a>

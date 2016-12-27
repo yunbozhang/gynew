@@ -70,38 +70,7 @@
 
 
                             </div>
-							<!-- Sidebar Starts -->
-                            <div class="span4 sidebar" id="sidebar">
-                                <div class="widget"><!-- Categories Widget -->
-                                    <h3>栏目分类</h3>
-                                    <ul>
-                                          {loop table="classtype" pid="$type["tid"]" mshow="1" not="1" as="t"}
-      <li><a href="{$t['url']}"{if($type['tid']==$t['tid'])} class="c"{/if}>{$t['classname']}</a></li>
-      {/loop}
-
-
-                                    </ul>
-                                </div>
-
-                                <div class="widget"><!-- Recent Posts Widget -->
-                                    <h3>推荐信息</h3>
-                                    <ul class="post-list unstyled">
-                                    {loop table="article" tid="$type['tid']" limit="3" trait="2"}
-                                        <li class="post-list_li clearfix">
-                                            <figure class="featured-thumbnail thumbnail">
-                                                <a href="{$v['url']}"><img src="{$GLOBALS['S']['jwcdnapi']}{$v['litpic']}" alt="{$v['title']}" /></a>
-                                            </figure>
-                                            <time datetime="2013-03-14T20:28">{fun date('Y-m-d',$v['addtime'])}</time>
-                                            <h4 class="post-list_h"><a href="{$v['url']}">{fun newstr($v['title'],30)}</a></h4>
-                                            <div class="excerpt">
-                                                {fun newstr($v['description'],200)} </div>
-                                            <a href="{$v['url']}" class="btn btn-primary">查看更多...</a>
-                                        </li>
-                                      {/loop}
-                                    </ul>
-                                </div>
-                            </div>
-							<!-- Sidebar Ends -->
+							
                         </div>
 						<!-- Main Content Ends -->
                     </div>

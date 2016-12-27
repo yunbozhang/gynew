@@ -104,11 +104,13 @@ class article extends syController
 			}
 			$this->lists=$list_c;
 		}
-		$this->positions='<a href="'.$GLOBALS["WWW"].'">首页</a>';
+		//$this->positions='<a href="'.$GLOBALS["WWW"].'">首页</a>';
+		$this->positions='';
+
 		$type_pos=$this->sy_class_type->navi($tid);
 		foreach($type_pos as $v){
 			$d_pos=syDB('classtype')->find(array('tid'=>$v['tid']),null,'tid,molds,htmldir,htmlfile,mrank');
-			$this->positions.='  &gt;  <a href="'.html_url('classtype',$d_pos).'">'.$v['classname'].'</a>';
+			$this->positions.='<a href="'.html_url('classtype',$d_pos).'">'.$v['classname'].'</a>';
 		}
 		$this->display('article/'.$t);
 	}
